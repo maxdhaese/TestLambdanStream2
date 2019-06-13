@@ -32,6 +32,8 @@ public class BookApp {
         printSortedByTitle(books);
         fancyLines();
         countBooksPerAuthor(books);
+        fancyLines();
+        printBooksReleasedIn2016(books);
 
 
 
@@ -77,8 +79,13 @@ public class BookApp {
     }
 
     public static void printBooksReleasedIn2016(Book[] books){
+        LocalDate dt = LocalDate.of(2016,5,5);
+        for (Book book : books) {
+            if (book.getReleaseDate().getYear() == dt.getYear()){
+                System.out.println(book);
+            }
 
-
+        }
 
     }
 
